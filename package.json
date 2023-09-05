@@ -1,0 +1,19 @@
+{
+    "name": "cypress_liverpool",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "cy:run": "cypress run --browser chrome --spec ./cypress/e2e/",
+        "cy:open": "cypress open"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "cypress": "^10.11.0",
+        "cypress-iframe": "^1.0.1",
+        "cypress-wait-until": "^1.7.2"
+    }
+}
