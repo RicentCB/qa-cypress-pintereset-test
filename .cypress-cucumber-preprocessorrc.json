@@ -1,0 +1,19 @@
+{
+    "json": {
+        "enabled": true,
+        "output": "Results/results.json",
+        "formatter": "cucumber-json-formatter"
+    },
+    "messages": {
+        "enabled": true,
+        "output": "Results/messages.ndjson"
+    },
+    "html": {
+        "enabled": false
+    },
+    "stepDefinitions": [
+        "cypress/e2e/[filepath]/**/*.{js,ts}",
+        "cypress/e2e/[filepath].{js,ts}",
+        "cypress/e2e/genericSteps.ts"
+    ]
+}
