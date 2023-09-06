@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "cy:run": "cypress run --browser chrome --spec ./cypress/e2e/",
-        "cy:open": "cypress open"
+        "cy:open:prod": "cypress open --env env-selected=prod"
     },
     "author": "",
     "license": "ISC",
