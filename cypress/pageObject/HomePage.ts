@@ -14,17 +14,26 @@ export class HomePage {
     clickSignUpButton() {
         cy.getByDataSelector(this.locators.testIdBtnSignUp).click();
     }
-    typeSignUpEmail(email: string){
+    typeSignUpEmail(email: string) {
         cy.getByDataSelector(this.locators.testIdDivSignUpEmail).find('input[type="email"]').type(email)
     }
-    typeSignUpPassword(password: string){
+    typeSignUpPassword(password: string) {
         cy.getByDataSelector(this.locators.testIdDivSignUpPassword).find('input[type="password"]').type(password)
     }
-    typeSignUpBirthdate(birthdate: string){
+    typeSignUpBirthdate(birthdate: string) {
         cy.getByDataSelector(this.locators.testIdDivSignUpBirthdate).find('input[type="date"]').type(birthdate)
     }
-    clickSignUpButtonSubmit(){
+    clickSignUpButtonSubmit() {
         cy.getByDataSelector(this.locators.testIdBtnSignUpSubmit).find('button').click()
+    }
+    verifyErrorOnEmail(labelError: string) {
+        cy.getByDataSelector(this.locators.testIdDivSignUpEmail).should('contain', labelError);
+    }
+    verifyErrorOnPassword(labelError: string) {
+        cy.getByDataSelector(this.locators.testIdDivSignUpPassword).should('contain', labelError);
+    }
+    verifyErrorOnBirthdate(labelError: string) {
+        cy.getByDataSelector(this.locators.testIdDivSignUpBirthdate).should('contain', labelError);
     }
 }
 
