@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "cy:run": "cypress run --browser chrome --spec ./cypress/e2e/",
+        "cy:run:prod": "cypress run --browser chrome --env env-selected=prod --spec ./cypress/e2e/",
         "cy:open:prod": "cypress open --env env-selected=prod"
     },
     "author": "",
