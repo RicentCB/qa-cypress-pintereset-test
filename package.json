@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^16.0.0",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "multiple-cucumber-html-reporter": "^3.0.1"
   },
   "devDependencies": {
     "cypress": "^10.11.0",
@@ -21,8 +22,17 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
+    "json": {
+      "enabled": true,
+      "output": "results/json.json"
+    },
     "html": {
-      "enabled": true
+      "enabled": true,
+      "output": "reports/index.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "results/messages.ndjson"
     },
     "stepDefinitions": [
       "cypress/e2e/[filepath]/**/*.{js,ts}",
