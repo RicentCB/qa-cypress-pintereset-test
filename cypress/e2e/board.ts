@@ -17,7 +17,7 @@ const checkNumberPieces = (color: "orange" | "blue", number: number): void => {
         "orange": "me1.gif",
     }
     let piecesCont: number = 0;
-    HomePage.getTheBoard().find('img').each((space: JQuery<HTMLElement>): void => {
+    HomePage.getTheBoard().each((space: JQuery<HTMLElement>): void => {
         if (space.attr("src") === colorToImage[color]) {
             piecesCont++
         }
@@ -30,4 +30,13 @@ Then("Check if there are just 12 blue pieces in the board", (): void => {
 })
 Then("Check if there are just 12 orange pieces in the board", (): void => {
     checkNumberPieces("orange", 12);
+})
+
+Then("The user pick all the blue pieces and they're goona see an error message", (): void => {
+    HomePage.getTheBoard().each((space: JQuery<HTMLElement>): void => {
+        if (space.attr("src") === "me1.gif") {
+            space.trigger("click")
+            HomePage.getInfoMeesage().should("have.text", "Click on your orange piece, then click where you want to move it.")
+        }
+    })
 })
