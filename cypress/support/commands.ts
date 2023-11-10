@@ -1,12 +1,12 @@
 // Commando for get element with the property "data-test-id"
-Cypress.Commands.add("getByDataSelector", (selector, ...args) => {
-    return cy.get(`[data-test-id=${selector}]`, ...args)
+Cypress.Commands.add("getSpaceByCoordinate", (x,y, ...args) => {
+    return cy.get(`img[name="space${x}${y}"]`, ...args)
 })
 
 declare global {
     namespace Cypress {
         interface Chainable {
-            getByDataSelector(selector: string): Chainable<JQuery>;
+            getSpaceByCoordinate(x: number, y: number): Chainable<JQuery>;
         }
     }
 }
